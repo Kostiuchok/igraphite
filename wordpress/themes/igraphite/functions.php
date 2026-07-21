@@ -46,6 +46,65 @@ function igraphite_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'igraphite_enqueue_assets');
 
+/*
+ * Contact form handler - replaces the old PHPMailer/Gmail-OAuth setup
+ * (assets/phpmailer_src/*) that held live, exposed credentials. Uses
+ * wp_mail() instead, which on this host goes through the server's own
+ * mail transport - no OAuth, no stored secrets. The migrated form's
+ * class was renamed away from "contactForm" so the old shared
+ * /assets/js/functions.js validation plugin (still used by the legacy
+ * static site) doesn't intercept the submit and AJAX it to the dead
+ * old endpoint - this one is a plain POST with a redirect-back.
+ */
+function igraphite_handle_contact() {
+    // Honeypot: real users never fill this hidden field.
+    if (!empty($_POST['website'])) {
+        wp_safe_redirect(wp_get_referer());
+        exit;
+    }
+
+    $name    = isset($_POST['contact-name']) ? sanitize_text_field($_POST['contact-name']) : '';
+    $email   = isset($_POST['contact-email']) ? sanitize_email($_POST['contact-email']) : '';
+    $phone   = isset($_POST['contact-phone']) ? sanitize_text_field($_POST['contact-phone']) : '';
+    $service = isset($_POST['contact-service']) ? sanitize_text_field($_POST['contact-service']) : '';
+    $message = isset($_POST['contact-infos']) ? sanitize_textarea_field($_POST['contact-infos']) : '';
+
+    $status = 'error';
+    if ($name && is_email($email)) {
+        $body = "Name: $name\nEmail: $email\nPhone: $phone\nService: $service\n\nMessage:\n$message";
+        $sent = wp_mail(
+            get_option('admin_email'),
+            'New contact request from ' . $name,
+            $body,
+            ['Reply-To: ' . $email]
+        );
+        $status = $sent ? 'success' : 'error';
+    }
+
+    wp_safe_redirect(add_query_arg('contact_status', $status, wp_get_referer()) . '#contact-result');
+    exit;
+}
+add_action('admin_post_igraphite_contact', 'igraphite_handle_contact');
+add_action('admin_post_nopriv_igraphite_contact', 'igraphite_handle_contact');
+
+function igraphite_contact_result_script() {
+    if (empty($_GET['contact_status'])) {
+        return;
+    }
+    $success = $_GET['contact_status'] === 'success';
+    $html = $success
+        ? '<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>'
+        : '<div class="alert alert-danger" role="alert">Something went wrong, please try again.</div>';
+    ?>
+    <script>
+    document.querySelectorAll('.contact-result').forEach(function (el) {
+        el.innerHTML = <?php echo wp_json_encode($html); ?>;
+    });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'igraphite_contact_result_script');
+
 function igraphite_favicon() {
     echo '<link href="/assets/images/favicon/favicon.png" rel="icon"/>' . "\n";
 }
