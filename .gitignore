@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# Contains live Google OAuth + DB credentials - do not commit to public repo.
+# TODO: move to env-based config when the admin panel's mail handler replaces these.
+assets/php/PHPMailer/get_oauth_token.php
+assets/phpmailer_src/get_oauth_token.php
+assets/phpmailer_src/index.php
+assets/phpmailer_src/class-db.php
