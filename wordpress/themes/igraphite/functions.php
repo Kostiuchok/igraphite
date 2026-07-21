@@ -12,6 +12,18 @@ if (!defined('ABSPATH')) {
  * after the static site is replaced by this WordPress install.
  */
 
+/*
+ * WordPress prepends site_url() to any enqueued src that doesn't start
+ * with "http"/"//" - a bare leading "/" is NOT treated as domain-root-
+ * absolute by wp_enqueue_style/script, so we build the real domain root
+ * explicitly here instead.
+ */
+function igraphite_asset_url($path) {
+    $parts = wp_parse_url(home_url());
+    $root = $parts['scheme'] . '://' . $parts['host'] . (isset($parts['port']) ? ':' . $parts['port'] : '');
+    return $root . $path;
+}
+
 function igraphite_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -25,12 +37,12 @@ add_action('after_setup_theme', 'igraphite_setup');
 
 function igraphite_enqueue_assets() {
     wp_enqueue_style('igraphite-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap', [], null);
-    wp_enqueue_style('igraphite-vendor', '/assets/css/vendor.min.css', [], '1.0.0');
-    wp_enqueue_style('igraphite-style', '/assets/css/style.css', ['igraphite-vendor'], '1.0.0');
+    wp_enqueue_style('igraphite-vendor', igraphite_asset_url('/assets/css/vendor.min.css'), [], '1.0.0');
+    wp_enqueue_style('igraphite-style', igraphite_asset_url('/assets/css/style.css'), ['igraphite-vendor'], '1.0.0');
 
-    wp_enqueue_script('igraphite-jquery', '/assets/js/vendor/jquery-3.6.0.min.js', [], null, true);
-    wp_enqueue_script('igraphite-vendor', '/assets/js/vendor.js', ['igraphite-jquery'], null, true);
-    wp_enqueue_script('igraphite-functions', '/assets/js/functions.js', ['igraphite-jquery', 'igraphite-vendor'], null, true);
+    wp_enqueue_script('igraphite-jquery', igraphite_asset_url('/assets/js/vendor/jquery-3.6.0.min.js'), [], null, true);
+    wp_enqueue_script('igraphite-vendor', igraphite_asset_url('/assets/js/vendor.js'), ['igraphite-jquery'], null, true);
+    wp_enqueue_script('igraphite-functions', igraphite_asset_url('/assets/js/functions.js'), ['igraphite-jquery', 'igraphite-vendor'], null, true);
 }
 add_action('wp_enqueue_scripts', 'igraphite_enqueue_assets');
 

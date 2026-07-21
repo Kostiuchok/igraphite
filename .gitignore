@@ -9,3 +9,6 @@ assets/php/PHPMailer/get_oauth_token.php
 assets/phpmailer_src/get_oauth_token.php
 assets/phpmailer_src/index.php
 assets/phpmailer_src/class-db.php
+
+# Playwright MCP screenshots/snapshots taken during manual QA
+.playwright-mcp/
