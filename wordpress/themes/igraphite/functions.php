@@ -35,6 +35,35 @@ function igraphite_setup() {
 }
 add_action('after_setup_theme', 'igraphite_setup');
 
+/*
+ * The theme's CSS/JS (ported from the original static site) styles dropdown
+ * submenus via .has-dropdown / .dropdown-menu (Bootstrap-style), not
+ * WordPress's default .menu-item-has-children / .sub-menu - without these,
+ * submenus render as a permanently-expanded plain list instead of a hover
+ * dropdown.
+ */
+function igraphite_nav_menu_li_class($classes, $item) {
+    if (in_array('menu-item-has-children', $classes, true)) {
+        $classes[] = 'has-dropdown';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'igraphite_nav_menu_li_class', 10, 2);
+
+function igraphite_nav_menu_submenu_class($classes) {
+    $classes[] = 'dropdown-menu';
+    return $classes;
+}
+add_filter('nav_menu_submenu_css_class', 'igraphite_nav_menu_submenu_class');
+
+function igraphite_nav_menu_link_attributes($atts, $item, $args, $depth) {
+    if (in_array('menu-item-has-children', $item->classes, true)) {
+        $atts['data-toggle'] = 'dropdown';
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'igraphite_nav_menu_link_attributes', 10, 4);
+
 function igraphite_enqueue_assets() {
     wp_enqueue_style('igraphite-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap', [], null);
     wp_enqueue_style('igraphite-vendor', igraphite_asset_url('/assets/css/vendor.min.css'), [], '1.0.0');
