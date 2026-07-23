@@ -87,6 +87,18 @@
         $(this).parent().siblings().removeClass("module-active");
     });
 
+    /* ------------------  MODULE LANGUAGE  ------------------ */
+
+    $(".module-language .selected").on("click", function(e) {
+        e.stopPropagation();
+        $(this).parent().toggleClass("module-active");
+        $(this).parent().siblings().removeClass("module-active");
+    });
+
+    $(document).on("click", function() {
+        $(".module-language").removeClass("module-active");
+    });
+
 
     /* ------------------  MODULE CANCEL ------------------ */
 

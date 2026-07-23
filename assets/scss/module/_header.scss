@@ -40,7 +40,8 @@
             }
 
             @media #{$maxSmall} {
-                width: 100px;
+                width : 100px;
+                height: auto;
             }
         }
     }

@@ -1,0 +1,80 @@
+<form class="igraphiteContactForm" method="post" action="https://www.igraphite.pl/wp-new/wp-admin/admin-post.php">
+  <input type="hidden" name="action" value="igraphite_quote"/>
+  <input type="text" name="hp_check" value="" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off"/>
+  <div class="row">
+
+    <div class="col-12 col-md-6">
+      <label class="form-label" for="select-1">Gatunek grafitu:</label>
+      <select class="form-control" id="select-1" name="contact-grade">
+        <option value="default">&#8230;</option>
+        <option value="GZI-92/40">GZI-92/40</option>
+        <option value="GZI-92/30">GZI-92/30</option>
+        <option value="GZI-92/20">GZI-92/20</option>
+        <option value="GZI-95/40">GZI-95/40</option>
+        <option value="GZI-95/30">GZI-95/30</option>
+        <option value="GZI-95/20">GZI-95/20</option>
+        <option value="GZI-99/40">GZI-99/40</option>
+        <option value="GZI-99/30">GZI-99/30</option>
+        <option value="GZI-99/20">GZI-99/20</option>
+      </select>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <label class="form-label" for="select-3">Zastosowanie</label>
+      <select class="form-control" id="select-3" name="contact-application">
+        <option value="default">&#8230;</option>
+        <option value="Metalurgia proszków">Metalurgia proszków</option>
+        <option value="Grafit do produkcji baterii">Grafit do produkcji baterii</option>
+        <option value="Szczotki węglowe">Szczotki węglowe</option>
+        <option value="Grafit żyłowy">Grafit żyłowy</option>
+        <option value="Dyspersja grafitowa">Dyspersja grafitowa</option>
+        <option value="Izolacja cieplna">Izolacja cieplna</option>
+        <option value="Motoryzacja">Motoryzacja</option>
+        <option value="W klockach i innych materiałach ciernych">W klockach i innych materiałach ciernych</option>
+        <option value="Produkcja tygli grafitowych">Produkcja tygli grafitowych</option>
+        <option value="Tradycyjne zastosowanie">Tradycyjne zastosowanie</option>
+      </select>
+    </div>
+
+
+    <div class="col-md-6">
+         <input type="text" class="form-control" name="contact-name" id="first-name" placeholder="Imię:" required>
+    </div>
+    <div class="col-md-6">
+         <input type="text" class="form-control" name="contact-last" id="last-name" placeholder="Nazwisko:" required>
+    </div>
+    <div class="col-md-6">
+         <input type="email" class="form-control" name="contact-email" id="contact-email" placeholder="Email:" required>
+    </div>
+    <div class="col-md-6">
+         <input type="text" class="form-control" name="contact-phone" id="phone" placeholder="Telefon:" required>
+    </div>
+    <div class="col-md-12">
+         <textarea class="form-control" name="contact-message" id="message" rows="4" placeholder="Message" required></textarea>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Preferowana metoda kontaktu</label>
+      <div class="custom-radio-group" id="custom-radio-group">
+        <div class="custom-control">
+          <input class="custom-control-input" type="radio" id="customRadioInline1" name="contact-method" value="wszystko"/>
+          <label for="customRadioInline1">wszystko</label>
+        </div>
+        <div class="custom-control">
+          <input class="custom-control-input" type="radio" id="customRadioInline2" name="contact-method" value="email"/>
+          <label for="customRadioInline2">email</label>
+        </div>
+        <div class="custom-control">
+          <input class="custom-control-input" type="radio" id="customRadioInline3" name="contact-method" value="telefon"/>
+          <label for="customRadioInline3">telefon</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn--secondary w-100">Poprosić o wycenę<i class="energia-arrow-right"></i></button>
+    </div>
+    <div class="col-12">
+      <div class="contact-result"></div>
+    </div>
+  </div>
+</form>

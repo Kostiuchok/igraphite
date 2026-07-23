@@ -2430,7 +2430,8 @@ ul.list-icons li i {
 
 @media screen and (max-width: 767.98px) {
 	.header .navbar-brand .logo {
-		width: 100px;
+		width : 100px;
+		height: auto;
 	}
 }
 

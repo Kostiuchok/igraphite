@@ -41,24 +41,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="social-links">
                     <a class="share-facebook" href="https://www.facebook.com/igraphite"><i class="energia-facebook"></i></a>
-                    <a class="share-instagram" href="javascript:void(0)"><i class="energia-twitter"></i></a>
-                    <a class="share-twitter" href="javascript:void(0)"><i class="energia-youtube"></i></a>
                 </div>
                 <div class="module module-language">
-                    <?php if (function_exists('pll_the_languages')) : ?>
-                        <?php
-                        $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'pl';
-                        ?>
-                        <div class="selected"><img src="/assets/images/module-language/<?php echo esc_attr($current_lang); ?>.png" alt="Language"/><span><?php echo esc_html($current_lang); ?></span><i class="fas fa-chevron-down"></i></div>
-                        <div class="lang-list">
-                            <ul>
-                                <?php pll_the_languages(['dropdown' => 0, 'show_flags' => 0, 'show_names' => 1]); ?>
-                            </ul>
-                        </div>
-                    <?php else : ?>
-                        <!-- Polylang not configured yet - static PL-only placeholder -->
-                        <div class="selected"><img src="/assets/images/module-language/pl.png" alt="Pl Language"/><span>pl</span><i class="fas fa-chevron-down"></i></div>
-                    <?php endif; ?>
+                    <?php igraphite_language_switcher(); ?>
                 </div>
             </div>
         </div>
@@ -68,8 +53,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img class="logo logo-mobile" src="/assets/images/logo/logo-mobile.png" alt="<?php bloginfo('name'); ?>"/>
             </a>
             <div class="module-holder module-holder-phone">
-                <div class="module module-search">
-                    <div class="module-icon module-icon-search"><i class="energia-search-Icon"></i></div>
+                <div class="module module-language">
+                    <?php igraphite_language_switcher(); ?>
                 </div>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             </div>
@@ -88,9 +73,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div>
                             <p>Zadzwoń do nas teraz: </p><a href="tel:37256995117">+37256995117</a><br/><a href="tel:48721566312">+48721566312</a>
                         </div>
-                    </div>
-                    <div class="module module-search">
-                        <div class="module-icon module-icon-search"><i class="energia-search-Icon"></i></div>
                     </div>
                     <div class="module-contact module-contact-2"><a class="btn btn--primary" href="<?php echo esc_url(home_url('/kontakt/')); ?>">request a quote <i class="energia-arrow-right"></i></a></div>
                 </div>
