@@ -13653,7 +13653,7 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 }
 
 .testimonial.testimonial-5 .contact-panel .contact-card .contact-body .btn {
-	width: 270px;
+	width: 100%;
 }
 
 .testimonial.testimonial-5 .contact-panel .contact-card .contact-body .form-control {
