@@ -76,6 +76,11 @@
             display        : flex;
             justify-content: flex-start;
             align-items    : center;
+            margin-bottom  : 22px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             &:hover {
                 a {
@@ -93,7 +98,7 @@
                 font-size     : 15px;
                 font-family   : var(--global--font-body);
                 font-weight   : 700;
-                line-height   : 36px;
+                line-height   : 22px;
                 text-transform: capitalize;
                 position      : relative;
                 transition    : 0.3s ease-in-out;

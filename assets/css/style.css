@@ -10506,6 +10506,11 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 	-webkit-box-align: center;
 	-ms-flex-align   : center;
 	align-items      : center;
+	margin-bottom    : 22px;
+}
+
+.widget-categories ul li:last-child {
+	margin-bottom: 0;
 }
 
 .widget-categories ul li:hover a {
@@ -10522,7 +10527,7 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 	font-size         : 15px;
 	font-family       : var(--global--font-body);
 	font-weight       : 700;
-	line-height       : 36px;
+	line-height       : 22px;
 	text-transform    : ;
 	position          : relative;
 	-webkit-transition: 0.3s ease-in-out;
