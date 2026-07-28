@@ -200,7 +200,7 @@ function igraphite_handle_contact() {
         $status = $sent ? 'success' : 'error';
     }
 
-    wp_safe_redirect(add_query_arg('contact_status', $status, wp_get_referer()) . '#contact-result');
+    wp_safe_redirect(add_query_arg('contact_status', $status, wp_get_referer()));
     exit;
 }
 add_action('admin_post_igraphite_contact', 'igraphite_handle_contact');
@@ -241,7 +241,7 @@ function igraphite_handle_quote() {
         $status = $sent ? 'success' : 'error';
     }
 
-    wp_safe_redirect(add_query_arg('contact_status', $status, wp_get_referer()) . '#contact-result');
+    wp_safe_redirect(add_query_arg('contact_status', $status, wp_get_referer()));
     exit;
 }
 add_action('admin_post_igraphite_quote', 'igraphite_handle_quote');
