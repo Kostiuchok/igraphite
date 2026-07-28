@@ -1507,7 +1507,10 @@ form .col-12 {
 }
 
 textarea.form-control {
-	height: auto;
+	height        : 100px;
+	line-height   : 1.5;
+	padding-top   : 12px;
+	padding-bottom: 12px;
 }
 
 .form-select {
