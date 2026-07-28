@@ -18572,11 +18572,11 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 }
 
 .footer .widget-contact .widget-content .phone {
-	margin-bottom: 18px;
+	margin-bottom: 6px;
 	font-family  : var(--global--font-body);
 	font-weight  : 300;
-	font-size    : 34px;
-	line-height  : 22px;
+	font-size    : 18px;
+	line-height  : 26px;
 	color        : #929ba2;
 	display      : -webkit-box;
 	display      : -ms-flexbox;
@@ -18594,9 +18594,9 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 .footer .widget-contact .widget-content .phone a {
 	font-family       : var(--global--font-body);
 	font-weight       : 300;
-	font-size         : 34px;
-	line-height       : 22px;
-	margin-left       : 8px;
+	font-size         : 18px;
+	line-height       : 26px;
+	margin-left       : 0;
 	color             : var(--global--color-white);
 	-webkit-transition: 0.3s ease-in-out;
 	-o-transition     : 0.3s ease-in-out;

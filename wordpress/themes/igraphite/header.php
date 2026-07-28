@@ -71,7 +71,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="module-holder">
                     <div class="module-call"><i class="icons-energiaphone-call"></i>
                         <div>
-                            <p>Zadzwoń do nas teraz: </p><a href="tel:+48504120655">+48 504 120 655 (Maciej)</a><br/><a href="tel:+48602608552">+48 602 608 552 (Agata)</a><br/><a href="tel:+380503303816">+38 050 330 38 16 (Дмитро)</a>
+                            <p>Zadzwoń do nas teraz: </p><a href="tel:+48504120655">+48 504 120 655</a><br/><a href="tel:+48602608552">+48 602 608 552</a><br/><a href="tel:+380503303816">+38 050 330 38 16</a>
                         </div>
                     </div>
                     <div class="module-contact module-contact-2"><a class="btn btn--primary" href="<?php echo esc_url(home_url('/kontakt/')); ?>">request a quote <i class="energia-arrow-right"></i></a></div>

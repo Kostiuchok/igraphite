@@ -123,11 +123,11 @@
             }
 
             .phone {
-                margin-bottom: 18px;
+                margin-bottom: 6px;
                 font-family  : var(--global--font-body);
                 font-weight  : 300;
-                font-size    : 34px;
-                line-height  : 22px;
+                font-size    : 18px;
+                line-height  : 26px;
                 color        : #929ba2;
                 display      : flex;
 
@@ -138,9 +138,9 @@
                 a {
                     font-family: var(--global--font-body);
                     font-weight: 300;
-                    font-size  : 34px;
-                    line-height: 22px;
-                    margin-left: 8px;
+                    font-size  : 18px;
+                    line-height: 26px;
+                    margin-left: 0;
                     color      : var(--global--color-white);
                     transition : 0.3s ease-in-out;
 

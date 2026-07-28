@@ -88,9 +88,9 @@ $igraphite_footer_lang = function_exists('pll_current_language') ? pll_current_l
                         <div class="footer-widget widget-contact">
                             <div class="widget-content">
                                 <ul>
-                                    <li class="phone"><a href="tel:+48504120655">+48 504 120 655</a> (Maciej)</li>
-                                    <li class="phone"><a href="tel:+48602608552">+48 602 608 552</a> (Agata)</li>
-                                    <li class="phone"><a href="tel:+380503303816">+38 050 330 38 16</a> (Дмитро)</li>
+                                    <li class="phone"><a href="tel:+48504120655">+48 504 120 655</a></li>
+                                    <li class="phone"><a href="tel:+48602608552">+48 602 608 552</a></li>
+                                    <li class="phone"><a href="tel:+380503303816">+38 050 330 38 16</a></li>
                                     <li class="email">Email: <a href="mailto:info@igraphite.pl">info@igraphite.pl</a></li>
                                     <li class="address"><p>28124010661111001167974605<br/>BALFORD SP z o.o. z siedzibą przy ul. Garbarska 3 lok. 1, 40-421 Katowice, Polska<br/>KRS 0001239195, NIP 9542907681, REGON 544639471</p></li>
                                 </ul>
