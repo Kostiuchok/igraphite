@@ -92,11 +92,7 @@ $igraphite_footer_lang = function_exists('pll_current_language') ? pll_current_l
                                     <li class="phone"><a href="tel:+48602608552">+48 602 608 552</a> (Agata)</li>
                                     <li class="phone"><a href="tel:+380503303816">+38 050 330 38 16</a> (Дмитро)</li>
                                     <li class="email">Email: <a href="mailto:info@igraphite.pl">info@igraphite.pl</a></li>
-                                    <?php if ($igraphite_footer_lang === 'en') : ?>
-                                    <li class="address"><p>Representative office in Kyiv: Szumskogo St. 1A, Ukraine, Kyiv</p></li>
-                                    <?php else : ?>
-                                    <li class="address"><p>Przedstawicielstwo w Kijowie: ul. Szumskogo 1A, Ukraina, Kijów</p></li>
-                                    <?php endif; ?>
+                                    <li class="address"><p>28124010661111001167974605<br/>BALFORD SP z o.o. z siedzibą przy ul. Garbarska 3 lok. 1, 40-421 Katowice, Polska<br/>KRS 0001239195, NIP 9542907681, REGON 544639471</p></li>
                                 </ul>
                             </div>
                         </div>
