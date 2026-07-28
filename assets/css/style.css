@@ -18793,3 +18793,65 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 	-o-transition     : 0.3s ease-in-out;
 	transition        : 0.3s ease-in-out;
 }
+
+/*------------------------------------*\
+    #Page Overrides
+    Page-specific mobile alignment fixes (Kontakt/Contacts, O nas/About us) -
+    see assets/scss/module/_page-overrides.scss for the source and rationale.
+\*------------------------------------*/
+
+body.page-id-17 .img-card,
+body.page-id-56 .img-card {
+	text-align: left;
+}
+
+@media screen and (max-width:991.98px) {
+	body.page-id-17 .img-card .card-content .content-top a,
+	body.page-id-56 .img-card .card-content .content-top a {
+		justify-content: flex-start;
+	}
+
+	body.page-id-17 .contact-card .contact-body .card-heading,
+	body.page-id-56 .contact-card .contact-body .card-heading,
+	body.page-id-17 .contact-card .contact-body .card-desc,
+	body.page-id-56 .contact-card .contact-body .card-desc {
+		text-align: left;
+	}
+
+	body.page-id-18 .page-title .title,
+	body.page-id-54 .page-title .title {
+		text-align: left;
+	}
+
+	body.page-id-18 .page-title .title .title-action,
+	body.page-id-54 .page-title .title .title-action {
+		justify-content: flex-start;
+	}
+
+	body.page-id-18 .breadcrumb-wrap .breadcrumb,
+	body.page-id-54 .breadcrumb-wrap .breadcrumb {
+		justify-content: flex-start;
+	}
+
+	body.page-id-18 .heading,
+	body.page-id-54 .heading {
+		text-align: left;
+	}
+
+	body.page-id-18 .about-block,
+	body.page-id-54 .about-block {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width:767.98px) {
+	body.page-id-18 .page-title .title .title-action,
+	body.page-id-54 .page-title .title .title-action {
+		align-items: flex-start;
+	}
+
+	body.page-id-18 .about .about-img .counter,
+	body.page-id-54 .about .about-img .counter {
+		align-items: flex-start;
+	}
+}

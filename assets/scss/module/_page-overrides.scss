@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    #Page Overrides
+    Page-specific mobile alignment fixes. The shared components below
+    default to centered text on mobile (.heading, .about-block, .img-card,
+    etc.), which reads fine on most pages but was reported as awkward on
+    Kontakt/Contacts and O-nas/About-us. Scoped by body page-id so the
+    shared components keep their default centered behavior everywhere else.
+\*------------------------------------*/
+
+// Kontakt (17) / Contacts (56)
+body.page-id-17,
+body.page-id-56 {
+    .img-card {
+        text-align: left;
+
+        .card-content .content-top a {
+            @media #{$maxTablet} {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .contact-card .contact-body {
+        .card-heading,
+        .card-desc {
+            @media #{$maxTablet} {
+                text-align: left;
+            }
+        }
+    }
+}
+
+// O nas (18) / About us (54)
+body.page-id-18,
+body.page-id-54 {
+    .page-title .title {
+        @media #{$maxTablet} {
+            text-align: left;
+        }
+
+        .title-action {
+            @media #{$maxTablet} {
+                justify-content: flex-start;
+            }
+
+            @media #{$maxSmall} {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    .breadcrumb-wrap .breadcrumb {
+        @media #{$maxTablet} {
+            justify-content: flex-start;
+        }
+    }
+
+    .heading {
+        @media #{$maxTablet} {
+            text-align: left;
+        }
+    }
+
+    .about-block {
+        @media #{$maxTablet} {
+            text-align: left;
+        }
+    }
+
+    .about .about-img .counter {
+        @media #{$maxSmall} {
+            align-items: flex-start;
+        }
+    }
+}
