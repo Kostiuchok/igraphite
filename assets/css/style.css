@@ -10476,7 +10476,7 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 	font-weight   : 700;
 	font-family   : var(--global--font-heading);
 	color         : var(--global--color-secondary);
-	text-transform: ;
+	text-transform: capitalize;
 	margin-bottom : 0;
 	position      : relative;
 }
@@ -10487,7 +10487,7 @@ ul.dropdown-menu>li.has-dropdown>a:before {
 }
 
 .widget-categories .widget-title {
-	margin-bottom: 8px;
+	margin-bottom: 22px;
 }
 
 .widget-categories ul {
