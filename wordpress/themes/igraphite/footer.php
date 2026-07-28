@@ -88,7 +88,9 @@ $igraphite_footer_lang = function_exists('pll_current_language') ? pll_current_l
                         <div class="footer-widget widget-contact">
                             <div class="widget-content">
                                 <ul>
-                                    <li class="phone">+3<a href="tel:+37256995117"> 7256995117</a></li>
+                                    <li class="phone"><a href="tel:+48504120655">+48 504 120 655</a> (Maciej)</li>
+                                    <li class="phone"><a href="tel:+48602608552">+48 602 608 552</a> (Agata)</li>
+                                    <li class="phone"><a href="tel:+380503303816">+38 050 330 38 16</a> (Дмитро)</li>
                                     <li class="email">Email: <a href="mailto:info@igraphite.pl">info@igraphite.pl</a></li>
                                     <?php if ($igraphite_footer_lang === 'en') : ?>
                                     <li class="address"><p>Representative office in Kyiv: Szumskogo St. 1A, Ukraine, Kyiv</p></li>
