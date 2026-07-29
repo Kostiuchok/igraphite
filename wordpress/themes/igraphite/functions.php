@@ -255,11 +255,28 @@ function igraphite_contact_result_script() {
     $html = $success
         ? '<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>'
         : '<div class="alert alert-danger" role="alert">Something went wrong, please try again.</div>';
+    $toast_bg = $success ? '#2e7d32' : '#c62828';
+    $toast_text = $success ? 'Thank you. We will contact you shortly.' : 'Something went wrong, please try again.';
     ?>
     <script>
     document.querySelectorAll('.contact-result').forEach(function (el) {
         el.innerHTML = <?php echo wp_json_encode($html); ?>;
     });
+    (function () {
+        var toast = document.createElement('div');
+        toast.setAttribute('role', 'alert');
+        toast.textContent = <?php echo wp_json_encode($toast_text); ?>;
+        toast.style.cssText = 'position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:99999;'
+            + 'background:<?php echo esc_js($toast_bg); ?>;color:#fff;padding:14px 22px;border-radius:6px;'
+            + 'font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.25);max-width:90%;text-align:center;'
+            + 'transition:opacity .4s ease;opacity:0;';
+        document.body.appendChild(toast);
+        requestAnimationFrame(function () { toast.style.opacity = '1'; });
+        setTimeout(function () {
+            toast.style.opacity = '0';
+            setTimeout(function () { toast.remove(); }, 400);
+        }, 6000);
+    })();
     </script>
     <?php
 }
